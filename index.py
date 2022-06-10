@@ -1,4 +1,3 @@
-# %%
 from urllib import response
 import pandas as pd
 import requests
@@ -12,6 +11,3 @@ response.status_code
 with open('nba_all_elo.csv', 'wb') as f:
     f.write(response.content)
 
-
-
-# %%
