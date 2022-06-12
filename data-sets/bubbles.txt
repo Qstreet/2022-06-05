@@ -1,0 +1,31 @@
+In Praise of Filter Membranes: A Step Beyond Filter Bubbles
+May 4, 2022Marc SmithBlog, Measuring social media, Social Media
+A design and policy proposal for improving the democratic quality of social media
+
+Marc Smith and Ben Shneiderman
+
+The fear of filter bubbles is a common concern in social media discussions. The threat of closed worlds of perception that lead to social divisions is a real one, as is the polarization that removes common ground that undermines democratic societies.  Advocates of open discussion and the free exchange of ideas see dangers in the increased divisions between people. 
+
+If filter bubbles are walls this is probably a valid concern.  But if bubbles are thought of as membranes the perspective shifts: almost all life on Earth has a membrane.  Four functions are performed by a membrane: like walls, they can keep bad things out and good things in but they also can pull good things in and push bad things out. 
+
+
+https://en.wikipedia.org/wiki/Cell_membrane
+Advocates of computer networks and social media heralded the absence of filters and the loss of gatekeepers as a great advance that gave people at the margins a voice.  But the absence of filters has downsides: few people want to drink unfiltered water.  Unfiltered information should be seen the same way.  With noise and deception, disinformation and propaganda, information streams can be polluted in ways that make them manipulative and harmful.
+
+Filter membranes are a positive alternative to filter bubbles.  Filter membranes allow for all four functions of a smart barrier.  Harmful information is blocked, and helpful information flows freely, while useless information is purged and desirable information retained.
+
+Smart information membranes can be powered by a simple set of features.  AI breakthroughs are not required, since community efforts and knowledgeable editors can do the job.  Features that support collective sense making and curation can allow individuals and communities to form their own membranes.  Membranes will vary, and many people will find a place within a community that aligns with their views.  The concern that these communities are impervious to external ideas is a worry.  But the worry that harmful or low quality information from one community can pollute others should also be a concern. 
+
+People form beliefs based on their exposure to ideas, the rate they are exposed again to these ideas, endorsements of the ideas by high status people and institutions, and finally coercion to accept the ideas.  This process can convince many people of many things.  When these beliefs are true this is a positive process.  When these beliefs are not true community leaders can take a public health approach that minimizes exposure, limits transmission, and inoculates people against the adoption of the belief.
+
+Some information membrane functions are familiar: the normal sharing and amplification of material on the internet is an example of the “pull things in” function of a membrane. When you find a few people in your network have all posted the same link, this is an example of the membrane finding and amplifying information.  But the other functions of an information membrane are not as well supported within existing social media infrastructure.  Key features are missing to enable the “keep bad things out” and “kick bad things out” functions of real membranes.  Features that enable users to both amplify and reduce the visibility of information can be easily implemented, extending the idea of blocking certain sources or liking certain posts.
+
+If we could grant other individuals or organizations the power of “editor” (and revoke that power when we decide), that could provide a collective response to a collective problem. Editors might be friends we trust or organizations we respect, such as a media company, civil society organization, public library, or major corporations. They would have the knowledge and motivation to review social media to limit the hate speech, misinformation, scams, and other malicious content. Many discussion fora have moderators who play a similar role to editors; they have the power to block posts, remove troublesome participants from the group, and encourage more discussion, if that would be helpful.  A market in editors might arise, whereby individual or organizations might charge for their services, just as we pay for newspaper or television subscriptions.
+
+If we accept the idea that exposure and repetition of exposure to information is a powerful predictor for people adopting a belief, then a public health focus on avoiding exposure, and certainly repeated exposure, is an important information hygiene practice.
+
+Distributed filter membranes may also make good economic sense. The costs of moderation on social media platforms are very high and the level of satisfaction with the results are generally low. Platforms should embrace a way to shift the costs and responsibilities of effective moderation and information filtration to their users. Distributed filters, as we described in a prior post are a relatively straight forward social and technical solutions that preserve individual rights while enabling more users to express themselves without harm to others.
+
+Marc Smith is a sociologist who directs the Social Media Research Foundation and the Connected Action consulting group.
+
+Ben Shneiderman is a computer scientist at the University of Maryland and member of the National Academy of Engineering.
