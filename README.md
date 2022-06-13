@@ -17,8 +17,20 @@ Workspace Settings - Settings stored inside your workspace and only apply when t
 
 type 'code .' in any folder to start editing files in that folder.
 
+## `.assign()`
+`data.assign(day= lambda df: df.loc[:,"day"] > 9 )` # T or F if > 9
 
-#
+##  drop columns
+```
+.drop(
+    columns=[
+        "col1",
+        "date",
+        "univ"
+    ]
+)
+```
+
 # How To Select Rows From Pandas DataFrame Based on Column Values
 ### Exploring how to select rows based on conditions in pandas DataFrames
 
