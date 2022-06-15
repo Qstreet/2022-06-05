@@ -37,8 +37,9 @@ crm = read()
 crm.loc[crm["account_name"].str.contains("USAU")]
 # crm.loc[:3,]
 
-# crm.rename(columns={"preferredphone": "preferred_phone", "officephone": "office_phone","homephone":"home_phone"}, \
-#     inplace=True)
+# crm.rename(columns= \ 
+#   {"preferredphone": "preferred_phone", "officephone": "office_phone","homephone":"home_phone"}, \
+#   inplace=True)
 
 # %%
 #crm.to_csv('crm_out.csv', index=False)
