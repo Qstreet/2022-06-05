@@ -31,6 +31,164 @@ type 'code .' in any folder to start editing files in that folder.
 )
 ```
 
+## missing data
+
+Method #1: missing data (by columns) count & percentage
+This is the most basic method to detect missing data among columns.
+
+The info method that we’ve used earlier includes this information. For example, we print out the summary of all the non-numeric columns below. Note that we are not printing for the entire DataFrame df since there are too many columns.
+
+`df[non_numeric_cols].info()`
+
+
+## Remove duplicates
+
+Run the following commands to remove the first duplicate `data.drop_duplicates` and keep the last (keep="last") occurrence.
+
+```
+data.drop_duplicates(subset=["Name"], keep="last", inplace=True)
+```
+
+### show all entries with at least on missing data NULL
+`
+data[data.isnull().any(axis=1)]
+`
+## Correct misspelled words
+
+Correcting Misspelled Words with spell-checker Python libraries
+
+1. Run the following commands to list all unique words unique() in the Type column. Replace Type if you prefer to list unique words from other columns.
+
+# Turn output into a list of unique words from the Type column
+`unique_type = list(data["Type"].str.split(", ", expand=True).stack().unique())`
+# Print out the list
+`unique_type`
+
+As you can see below, there are two misspelled words (Posion and Fie) that should be “Poison” and “Fire.” Now you can go through the dataset, find which rows have misspelled words, and fix them.
+
+Finding Misspelled Words
+
+Run the below command to show all rows that contains() the word Posion from the Type column. The regex argument is set to false (regex=False) to treat the string (Posion) as a literal string and not a regular expression.
+
+`data[data["Type"].str.contains("Posion", regex=False)]`
+
+In the following output, there are four rows (Arbok(24), Nidorina(30), Nidoqueen(30) and Nidoran(32)), that have the misspelled word Posion in the Type column.
+
+Viewing Misspelled Words
+
+Run the commands below to replace Posion for all entries in the Type column with the word Poison.
+
+# Replace Posion with the word Poison
+
+`data["Type"] = data["Type"].apply(lambda x: x.replace("Posion", "Poison"))`
+
+# Lists data entries from 0-30
+data.head(30)
+
+## Numeric vs non-numeric columns
+```
+numeric_cols = df.select_dtypes(include=['number']).columns
+print(numeric_cols)
+
+non_numeric_cols = df.select_dtypes(exclude=['number']).columns
+print(non_numeric_cols)
+```
+
+## Merge two Datasets into noe
+
+combining two datasets in one, and line up rows based on some particular or common property for data analysis. 
+
+We can do this by using the merge() function of the dataframe. 
+
+```
+DataFrame_name.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
+```
+
+Rebuild Missing Data
+
+To find and fill the missing data in the dataset we will use another function. There are 4 ways to find the null values if present in the dataset. Let’s see them one by one:
+
+Using isnull() function:
+
+`data.isnull()`
+
+Data Cleaning Cycle isnull
+This function provides the boolean value for the complete dataset to know if any null value is present or not.
+
+`data.isna()`
+
+isna function
+This is the same as the isnull() function. Ans provides the same output.
+
+Using isna().any()
+
+`data.isna().any()`
+
+isna().any()
+This function also gives a boolean value if any null value is present or not, but it gives results column-wise, not in tabular format.
+
+`data.isna().sum()`
+ 
+
+This function gives the sum of the null values preset in the dataset column-wise.
+
+`data.isna().any().sum()`
+ 
+`isna().any().sum()`
+
+This function gives output in a single value if any null is present or not.
+
+There are no null values present in our dataset. But if there are any null values preset we can fill those places with any other value using the fillna() function of DataFrame.Following is the syntax of fillna() function:
+
+`DataFrame_name.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)`
+
+This function will fill NA/NaN or 0 values in place of null spaces.
+
+Standardization and Normalization
+Data Standardization and Normalization is a common practice in machine learning. 
+
+Standardization is another scaling technique where the values are centered around the mean with a unit standard deviation. This means that the mean of the attribute becomes zero and the resultant distribution has a unit standard deviation.
+
+Normalization is a scaling technique in which values are shifted and rescaled so that they end up ranging between 0 and 1. It is also known as Min-Max scaling.
+
+This step is not needed for the dataset we are using. So, we will skip this step.
+
+De-Duplicate means remove all duplicate values. There is no need for duplicate values in data analysis. These values only affect the accuracy and efficiency of the analysis result. To find duplicate values in the dataset we will use a simple dataframe function i.e. duplicated(). Let’s see the example:
+
+`data.duplicated()`
+
+De-Duplicate
+
+This function also provides bool values for duplicate values in the dataset. As we can see that dataset doesn’t contain any duplicate values.
+If a dataset contains duplicate values it can be removed using the drop_duplicates() function. Following is the syntax of this function:
+
+`DataFrame_name.drop_duplicates(subset=None, keep='first', inplace=False, ignore_index=False)`
+
+
+### Read CSV
+
+`import csv`
+#import to use the csv module
+```
+with open('demo_csv.csv', mode="r") as csv_file: #"r" represents the read mode
+    reader = csv.reader(csv_file) #this is the reader object
+
+    for item in reader:
+    # you have to loop through the document to get each data
+        print(item)
+```
+
+## Remove Whitespaces
+
+```
+# remove whitespaces from Name column
+data["Name"].str.replace(' ', '')
+# remove whitespaces from Weight column
+data["Type"].str.replace(' ', '')
+# remove whitespaces from Type column
+data["Weaknesses"].str.replace(' ', '')
+```
+
 # How To Select Rows From Pandas DataFrame Based on Column Values
 ### Exploring how to select rows based on conditions in pandas DataFrames
 
