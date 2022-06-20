@@ -1,4 +1,4 @@
-# 2022-06-05
+# 2022-06-17
 RealPython Data Cleaning
 
 Data sets here: 
@@ -34,41 +34,35 @@ type 'code .' in any folder to start editing files in that folder.
 ## missing data
 
 Method #1: missing data (by columns) count & percentage
-This is the most basic method to detect missing data among columns.
-
-The info method that we’ve used earlier includes this information. For example, we print out the summary of all the non-numeric columns below. Note that we are not printing for the entire DataFrame df since there are too many columns.
+most basic method to detect missing data among columns.
 
 `df[non_numeric_cols].info()`
 
-
 ## Remove duplicates
-
-Run the following commands to remove the first duplicate `data.drop_duplicates` and keep the last (keep="last") occurrence.
+to remove the first duplicate `data.drop_duplicates` and keep the last (keep="last") occurrence.
 
 ```
 data.drop_duplicates(subset=["Name"], keep="last", inplace=True)
 ```
 
 ### show all entries with at least on missing data NULL
-`
-data[data.isnull().any(axis=1)]
-`
+
+`data[data.isnull().any(axis=1)]`
+
 ## Correct misspelled words
 
 Correcting Misspelled Words with spell-checker Python libraries
 
-1. Run the following commands to list all unique words unique() in the Type column. Replace Type if you prefer to list unique words from other columns.
+to list all unique words `unique()` in the Type column. Replace Type for other columns.
 
 # Turn output into a list of unique words from the Type column
 `unique_type = list(data["Type"].str.split(", ", expand=True).stack().unique())`
-# Print out the list
-`unique_type`
 
-As you can see below, there are two misspelled words (Posion and Fie) that should be “Poison” and “Fire.” Now you can go through the dataset, find which rows have misspelled words, and fix them.
+two misspelled words (Posion and Fie) that should be “Poison” and “Fire.” go through the dataset, find which rows have misspelled words, and fix them.
 
 Finding Misspelled Words
 
-Run the below command to show all rows that contains() the word Posion from the Type column. The regex argument is set to false (regex=False) to treat the string (Posion) as a literal string and not a regular expression.
+to show all rows that `contains()` the word Posion from the Type column. The regex argument is set to false (regex=False) to treat the string (Posion) as a literal string and not a regular expression.
 
 `data[data["Type"].str.contains("Posion", regex=False)]`
 
@@ -76,14 +70,11 @@ In the following output, there are four rows (Arbok(24), Nidorina(30), Nidoqueen
 
 Viewing Misspelled Words
 
-Run the commands below to replace Posion for all entries in the Type column with the word Poison.
+to replace Posion for all entries in the Type column with the word Poison.
 
-# Replace Posion with the word Poison
-
+## Replace Posion with the word Poison
 `data["Type"] = data["Type"].apply(lambda x: x.replace("Posion", "Poison"))`
 
-# Lists data entries from 0-30
-data.head(30)
 
 ## Numeric vs non-numeric columns
 ```
